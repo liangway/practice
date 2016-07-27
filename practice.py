@@ -47,6 +47,21 @@ def partitionArray(nums):
             oddList.append(i)
     return sorted(oddList) + sorted(evenList)
 
+def getNumPosition(l, query):
+    '''
+    Give you an integer array (index from 0 to n-1,
+    where n is the size of this array, value from 0 to 10000)
+    and an query list. For each query, give you an integer,
+    return the number of element in the array that are
+    smaller than the given integer.
+    eg.
+    For array [1,2,7,8,5],
+    and queries [1,8,5], return [0,4,2]
+    '''
+    position = []
+    for q in query:
+        position.append(l.index(q))
+    return position
 
 if __name__ == '__main__':
     print convert([[1, 2, 3], [4, 5, 6]])
@@ -54,3 +69,5 @@ if __name__ == '__main__':
     print convert([])
 
     print partitionArray([2, 3, 4, 5])
+
+    print getNumPosition([1,2,7,8,5], [1, 8, 5] )
